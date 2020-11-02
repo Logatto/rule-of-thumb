@@ -5,6 +5,22 @@ import router from "./router";
 import store from "./store";
 import "normalize.css";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faThumbsUp,
+  faThumbsDown,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookSquare,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+library.add(faThumbsUp, faThumbsDown, faSearch, faFacebookSquare, faTwitter);
+
+Vue.component("fa", FontAwesomeIcon);
+
 Vue.config.productionTip = false;
 
 new Vue({

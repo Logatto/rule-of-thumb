@@ -39,8 +39,12 @@
         </div>
         <div class="box-footer">
           <div class="vote-buttons">
-            <button class="vote-up">UP</button>
-            <button class="vote-down">DOWN</button>
+            <button class="vote-up">
+              <fa icon="thumbs-up" size="2x" />
+            </button>
+            <button class="vote-down">
+              <fa icon="thumbs-down" size="2x" />
+            </button>
           </div>
         </div>
       </section>
@@ -91,8 +95,12 @@
             </div>
             <div class="card-options">
               <div class="button-options">
-                <button class="btn btn-green btn-active">UP</button>
-                <button class="btn btn-orange">DO</button>
+                <button class="btn btn-green btn-active">
+                  <fa icon="thumbs-up" />
+                </button>
+                <button class="btn btn-orange">
+                  <fa icon="thumbs-down" />
+                </button>
               </div>
               <div class="button-action">
                 <button class="btn btn-primary">Vote Now</button>
@@ -101,12 +109,16 @@
           </div>
 
           <div class="card-results">
-            <div class="result_up">UP 64%</div>
-            <div class="result_down">Down 36%</div>
+            <div class="result_up">
+              <fa icon="thumbs-up" size="2x" /> <span>64%</span>
+            </div>
+            <div class="result_down">
+              <fa icon="thumbs-down" size="2x" /> <span>36%</span>
+            </div>
           </div>
 
           <div class="card-current-status">
-            <button class="btn btn-green">UP</button>
+            <button class="btn btn-green"><fa icon="thumbs-up" /></button>
           </div>
         </article>
       </section>
@@ -130,8 +142,8 @@
       <div class="social">
         <span>Follow Us</span>
 
-        <span>Icon</span>
-        <span>Icon</span>
+        <span><fa :icon="['fab', 'facebook-square']" size="2x" /> </span>
+        <span><fa :icon="['fab', 'twitter']" size="2x"/></span>
       </div>
     </footer>
 
@@ -518,6 +530,8 @@ footer {
   }
 
   .social {
+    display: flex;
+    align-items: center;
     span {
       margin-left: 20px;
     }

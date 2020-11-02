@@ -89,6 +89,20 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
               sequi?
             </div>
+            <div class="card-options">
+              <div class="button-options">
+                <button>UP</button>
+                <button>DOWN</button>
+              </div>
+              <div class="button-action">
+                <button>Vote Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-results">
+            <div class="result_up">UP 64%</div>
+            <div class="result_down">Down 36%</div>
           </div>
         </article>
       </section>
@@ -338,6 +352,47 @@ main {
       }
       &-description {
         margin-top: 20px;
+      }
+
+      &-options {
+        display: flex;
+        margin: 20px 0 20px 0;
+
+        button {
+          margin-right: 5px;
+        }
+
+        .button-options {
+        }
+      }
+
+      &-results {
+        position: absolute;
+        bottom: 0;
+        height: 50px;
+        width: 100%;
+        display: flex;
+
+        // padding: 0 10px;
+
+        .result_up {
+          width: 64%;
+          height: 100%;
+          background: rgba(28, 187, 180, 0.6);
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          padding-left: 10px;
+        }
+        .result_down {
+          width: 36%;
+          height: 100%;
+          background: rgba(255, 173, 29, 0.6);
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          padding-right: 10px;
+        }
       }
     }
   }

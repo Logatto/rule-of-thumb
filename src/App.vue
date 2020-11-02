@@ -68,25 +68,27 @@
         </div>
       </section>
 
-      <h1>Previous Rulings</h1>
+      <h1>Votes</h1>
 
       <section class="people-cards">
         <article
           v-for="id in 4"
           :key="id"
           class="card"
-          style="background-image: url('https://rule-of-thumb.s3-us-west-1.amazonaws.com/images/kanye.jpg')"
+          style="background-image: linear-gradient(0deg, rgba(0,0,0,0.611764705882353) 0%, rgba(0,0,0,0) 100%) , url('https://rule-of-thumb.s3-us-west-1.amazonaws.com/images/kanye.jpg')"
         >
-          <div class="card-title_name">
-            Kanye West
-          </div>
-          <div class="card-subinfo">
-            <div class="card-subinfo_time">1 month ago</div>
-            <div class="subinfo_label">in Entertaiment</div>
-          </div>
-          <div class="card-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-            sequi?
+          <div class="card-content">
+            <h2 class="card-title_name">
+              Kanye West
+            </h2>
+            <div class="card-subinfo">
+              <div class="card-subinfo_time">1 month ago</div>
+              <div class="subinfo_label">in Entertaiment</div>
+            </div>
+            <div class="card-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
+              sequi?
+            </div>
           </div>
         </article>
       </section>
@@ -103,7 +105,7 @@
 </template>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
 #app {
   font-family: "Lato", sans-serif;
@@ -111,6 +113,9 @@
 
 h1 {
   font-size: 2.5rem;
+}
+h2 {
+  font-size: 2.8rem;
 }
 
 header {
@@ -137,7 +142,7 @@ nav {
     rgba(102, 102, 102, 0.4) 55%,
     rgba(255, 255, 255, 0) 100%
   );
-  padding: 0 10rem 0 10rem;
+  padding: 0 25% 0 25%;
 
   .logo {
     display: flex;
@@ -168,7 +173,7 @@ nav {
 
 section.box {
   color: white;
-  margin-left: 10rem;
+  margin-left: 25%;
   margin-top: 70px;
   backdrop-filter: blur(10px);
   background: rgba(60, 60, 60, 0.5);
@@ -273,7 +278,7 @@ section.box {
 }
 
 main {
-  margin: 2rem 10rem 0 10rem;
+  margin: 2rem 25% 0 25%;
   .box-message {
     padding: 0 1.8rem 0 1.8rem;
     background: #ebebeb;
@@ -305,7 +310,35 @@ main {
   .people-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 500px;
+    gap: 40px;
+    color: white;
     .card {
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+
+      &-content {
+        position: absolute;
+        bottom: 0;
+        margin: 2.5rem;
+      }
+
+      &-title_name {
+        margin: 0;
+      }
+
+      &-subinfo {
+        display: flex;
+
+        &_time {
+          font-weight: bolder;
+          margin-right: 5px;
+        }
+      }
+      &-description {
+        margin-top: 20px;
+      }
     }
   }
 }

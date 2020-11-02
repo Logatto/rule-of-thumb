@@ -54,7 +54,43 @@
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <section class="box-message">
+        <div class="title">
+          <span>Speak out. Be heard.</span>
+          <br />
+          <strong>Be counted</strong>
+        </div>
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          consequuntur ad libero asperiores maxime, tempore dolorem placeat id
+          aliquam adipisci!
+        </div>
+      </section>
+
+      <h1>Previous Rulings</h1>
+
+      <section class="people-cards">
+        <article
+          v-for="id in 4"
+          :key="id"
+          class="card"
+          style="background-image: url('https://rule-of-thumb.s3-us-west-1.amazonaws.com/images/kanye.jpg')"
+        >
+          <div class="card-title_name">
+            Kanye West
+          </div>
+          <div class="card-subinfo">
+            <div class="card-subinfo_time">1 month ago</div>
+            <div class="subinfo_label">in Entertaiment</div>
+          </div>
+          <div class="card-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
+            sequi?
+          </div>
+        </article>
+      </section>
+    </main>
 
     <footer></footer>
 
@@ -73,8 +109,12 @@
   font-family: "Lato", sans-serif;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
 header {
-  // position: relative;
+  height: 80vh;
 }
 
 .background-image {
@@ -207,6 +247,17 @@ section.box {
     justify-content: flex-end;
     padding-right: 10px;
     background: rgba(112, 112, 112, 0.3);
+    font-size: 0.8rem;
+    font-weight: 400;
+
+    &:after {
+      content: "";
+      position: absolute;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 7px solid rgba(112, 112, 112, 1);
+      margin-right: -17px;
+    }
   }
   .number-days {
     width: 60%;
@@ -216,6 +267,46 @@ section.box {
     align-items: center;
     background: rgba(255, 255, 255, 0.7);
     padding-left: 20px;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+main {
+  margin: 2rem 10rem 0 10rem;
+  .box-message {
+    padding: 0 1.8rem 0 1.8rem;
+    background: #ebebeb;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 100px;
+
+    .title {
+      width: 20%;
+      text-align: center;
+      padding-right: 1.8rem;
+      span {
+        font-size: 1.5rem;
+      }
+      strong {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+
+    .description {
+      width: 80%;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+  }
+
+  .people-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .card {
+    }
   }
 }
 </style>

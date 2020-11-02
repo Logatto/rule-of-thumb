@@ -1,0 +1,49 @@
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2.8rem;
+}
+
+.btn {
+  color: white;
+  border: 0;
+
+  width: 35px;
+  height: 35px;
+
+  &-active {
+    border: 1px solid white;
+  }
+
+  &-primary {
+    border: 1px solid white;
+    background: transparent;
+    padding: 0.7rem 1rem;
+
+    width: auto;
+    height: auto;
+  }
+
+  &-secondary {
+    color: black;
+    width: auto;
+    height: auto;
+    border: 2px solid gray;
+    padding: 0.7rem 1rem;
+    background: transparent;
+  }
+
+  &-green {
+    background: rgba(28, 187, 180, 0.8);
+  }
+
+  &-orange {
+    background: rgba(255, 173, 29, 0.8);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

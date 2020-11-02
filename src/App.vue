@@ -15,9 +15,9 @@
           </div>
         </div>
         <ul class="menus">
-          <li>Past Trials</li>
-          <li class="">How it Works</li>
-          <li>Log in/Sign Up</li>
+          <li><a href="#">Past Trials</a></li>
+          <li class=""><a href="#"> it Works</a></li>
+          <li><a href="#"> Log in/Sign Up</a></li>
         </ul>
       </nav>
       <section class="box">
@@ -91,11 +91,11 @@
             </div>
             <div class="card-options">
               <div class="button-options">
-                <button>UP</button>
-                <button>DOWN</button>
+                <button class="btn btn-green btn-active">UP</button>
+                <button class="btn btn-orange">DO</button>
               </div>
               <div class="button-action">
-                <button>Vote Now</button>
+                <button class="btn btn-primary">Vote Now</button>
               </div>
             </div>
           </div>
@@ -104,11 +104,36 @@
             <div class="result_up">UP 64%</div>
             <div class="result_down">Down 36%</div>
           </div>
+
+          <div class="card-current-status">
+            <button class="btn btn-green">UP</button>
+          </div>
         </article>
+      </section>
+
+      <section class="submit">
+        <div class="submit-text">
+          Is there anyone else you would want us to add?
+        </div>
+        <div class="submit-button">
+          <button class="btn btn-secondary">Submit a Name</button>
+        </div>
       </section>
     </main>
 
-    <footer></footer>
+    <footer>
+      <div class="link">
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="social">
+        <span>Follow Us</span>
+
+        <span>Icon</span>
+        <span>Icon</span>
+      </div>
+    </footer>
 
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
@@ -143,6 +168,49 @@ header {
   background: no-repeat;
   background-size: cover;
   z-index: -1;
+}
+
+.btn {
+  color: white;
+  border: 0;
+
+  width: 35px;
+  height: 35px;
+
+  &-active {
+    border: 1px solid white;
+  }
+
+  &-primary {
+    border: 1px solid white;
+    background: transparent;
+    padding: 0.7rem 1rem;
+
+    width: auto;
+    height: auto;
+  }
+
+  &-secondary {
+    color: black;
+    width: auto;
+    height: auto;
+    border: 2px solid gray;
+    padding: 0.7rem 1rem;
+    background: transparent;
+  }
+
+  &-green {
+    background: rgba(28, 187, 180, 0.8);
+  }
+
+  &-orange {
+    background: rgba(255, 173, 29, 0.8);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 nav {
@@ -359,10 +427,12 @@ main {
         margin: 20px 0 20px 0;
 
         button {
-          margin-right: 5px;
+          margin-right: 10px;
         }
 
         .button-options {
+          display: flex;
+          align-items: center;
         }
       }
 
@@ -394,6 +464,62 @@ main {
           padding-right: 10px;
         }
       }
+
+      &-current-status {
+        position: absolute;
+        bottom: 205px;
+      }
+    }
+  }
+
+  .submit {
+    margin-top: 32px;
+    margin-bottom: 40px;
+    height: 80px;
+    max-width: 100%;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.8)
+      ),
+      url("~@/assets/submit-image.png");
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+
+    &-text {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+footer {
+  background-image: linear-gradient(
+    to right,
+    #000 10%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: top;
+  background-size: 7px 1px;
+  background-repeat: repeat-x;
+
+  height: 80px;
+  margin: 0 25%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .link {
+    a {
+      margin-right: 20px;
+    }
+  }
+
+  .social {
+    span {
+      margin-left: 20px;
     }
   }
 }

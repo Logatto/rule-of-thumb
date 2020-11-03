@@ -4,6 +4,7 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import "normalize.css";
+import "./filters";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {

@@ -10,23 +10,41 @@
         {{ name }}
       </h2>
       <div class="card-subinfo">
-        <div class="card-subinfo_time">1 month ago</div>
+        <div class="card-subinfo_time">{{ date | timeago }}</div>
         <div class="subinfo_label">in {{ label }}</div>
       </div>
       <div class="card-description">
-        {{ description }}
+        {{ isVoted ? "Thank you for voting!" : description }}
       </div>
       <div class="card-options">
-        <div class="button-options">
-          <button class="btn btn-green btn-active">
+        <div class="button-options" v-if="!isVoted">
+          <button
+            class="btn btn-green"
+            :class="selected == 'up' ? 'btn-active' : null"
+            @click="selected = 'up'"
+          >
             <fa icon="thumbs-up" />
           </button>
-          <button class="btn btn-orange">
+          <button
+            class="btn btn-orange"
+            :class="selected == 'down' ? 'btn-active' : null"
+            @click="selected = 'down'"
+          >
             <fa icon="thumbs-down" />
           </button>
         </div>
         <div class="button-action">
-          <button class="btn btn-primary">Vote Now</button>
+          <button
+            class="btn btn-primary"
+            @click="sendVote"
+            v-if="!isVoted"
+            :disabled="!selected"
+          >
+            Vote Now
+          </button>
+          <button class="btn btn-primary" @click="voteAgain" v-if="isVoted">
+            Vote Again
+          </button>
         </div>
       </div>
     </div>
@@ -51,6 +69,12 @@
 <script>
 export default {
   name: "Card",
+  data() {
+    return {
+      selected: null,
+      isVoted: false,
+    };
+  },
   props: {
     name: {
       type: String,
@@ -93,6 +117,15 @@ export default {
         : { color: "orange", status: "down" };
     },
   },
+  methods: {
+    sendVote() {
+      this.selected = null;
+      this.isVoted = true;
+    },
+    voteAgain() {
+      this.isVoted = false;
+    },
+  },
 };
 </script>
 
@@ -122,6 +155,7 @@ export default {
   }
   &-description {
     margin-top: 20px;
+    min-height: 2.5rem;
   }
 
   &-options {

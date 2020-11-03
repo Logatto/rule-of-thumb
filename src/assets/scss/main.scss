@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
 h1 {
   font-size: 2.5rem;
 }
@@ -13,7 +15,7 @@ h2 {
   height: 35px;
 
   &-active {
-    border: 1px solid white;
+    border: 2px solid white;
   }
 
   &-primary {
@@ -46,4 +48,17 @@ h2 {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  cursor: pointer;
+
+  &:disabled,
+  &[disabled] {
+    border: 1px solid #999999;
+  }
+
+  &:focus {
+    outline: 0;
+  }
 }

@@ -19,7 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 @import "~@/assets/scss/main.scss";
 
 #app {

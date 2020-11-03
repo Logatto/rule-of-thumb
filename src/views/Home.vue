@@ -16,6 +16,7 @@
         :key="i"
         name="Malala"
         label="Politic"
+        date="2020-04-10"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sequi?"
         image="https://rule-of-thumb.s3-us-west-1.amazonaws.com/images/malala.jpg"
         :total_up="3"

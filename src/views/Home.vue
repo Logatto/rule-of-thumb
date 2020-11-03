@@ -12,15 +12,16 @@
 
     <section class="people-cards">
       <Card
-        v-for="i in 4"
-        :key="i"
-        name="Malala"
-        label="Politic"
-        date="2020-04-10"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sequi?"
-        image="https://rule-of-thumb.s3-us-west-1.amazonaws.com/images/malala.jpg"
-        :total_up="3"
-        :total_down="10"
+        v-for="vote in votes"
+        :id="vote.id"
+        :key="vote.id"
+        :name="vote.name"
+        :label="vote.category"
+        :date="vote.date"
+        :description="vote.description"
+        :image="vote.image"
+        :total_up="vote.votes_up"
+        :total_down="vote.votes_down"
       />
     </section>
 
@@ -35,6 +36,7 @@
 import Card from "@/components/common/Card.vue";
 import BoxMessage from "@/components/common/BoxMessage.vue";
 import BoxSubmit from "@/components/common/BoxSubmit.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "Home",
@@ -42,6 +44,12 @@ export default {
     Card,
     BoxMessage,
     BoxSubmit,
+  },
+  computed: {
+    ...mapState(["votes"]),
+  },
+  mounted() {
+    this.$store.dispatch("getAllVotes", { self: this });
   },
 };
 </script>

@@ -50,10 +50,18 @@
     </div>
 
     <div class="card-results">
-      <div class="result_up" :style="`width:${percentUp}%!important`">
+      <div
+        class="result_up"
+        :style="`width:${percentUp}%!important`"
+        v-if="percentUp"
+      >
         <fa icon="thumbs-up" size="2x" /> <span>{{ percentUp }}%</span>
       </div>
-      <div class="result_down" :style="`width:${percentDown}%!important`">
+      <div
+        class="result_down"
+        :style="`width:${percentDown}%!important`"
+        v-if="percentDown"
+      >
         <fa icon="thumbs-down" size="2x" /> <span> {{ percentDown }}%</span>
       </div>
     </div>
@@ -76,6 +84,9 @@ export default {
     };
   },
   props: {
+    id: {
+      type: Number,
+    },
     name: {
       type: String,
     },
@@ -105,9 +116,11 @@ export default {
       return this.total_up + this.total_down;
     },
     percentUp() {
+      if (this.total == 0 || this.total_up == 0) return 0;
       return Math.round((100 / this.total) * this.total_up);
     },
     percentDown() {
+      if (this.total == 0 || this.total_down == 0) return 0;
       return Math.round((100 / this.total) * this.total_down);
     },
     currentStatus() {
@@ -118,7 +131,12 @@ export default {
     },
   },
   methods: {
-    sendVote() {
+    async sendVote() {
+      await this.$store.dispatch("sendVote", {
+        id: this.id,
+        type_vote: this.selected.toUpperCase(),
+      });
+
       this.selected = null;
       this.isVoted = true;
     },

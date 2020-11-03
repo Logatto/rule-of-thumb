@@ -11,7 +11,16 @@
     <h1>Votes</h1>
 
     <section class="people-cards">
-      <Card v-for="i in 4" :key="i" />
+      <Card
+        v-for="i in 4"
+        :key="i"
+        name="Malala"
+        label="Politic"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sequi?"
+        image="https://rule-of-thumb.s3-us-west-1.amazonaws.com/images/malala.jpg"
+        :total_up="3"
+        :total_down="10"
+      />
     </section>
 
     <BoxSubmit

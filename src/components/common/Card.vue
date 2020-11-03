@@ -1,18 +1,20 @@
 <template>
   <article
     class="card"
-    style="background-image: linear-gradient(0deg, rgba(0,0,0,0.611764705882353) 0%, rgba(0,0,0,0) 100%) , url('https://rule-of-thumb.s3-us-west-1.amazonaws.com/images/kanye.jpg')"
+    :style="
+      `background-image: linear-gradient(0deg, rgba(0,0,0,0.611764705882353) 0%, rgba(0,0,0,0) 100%) , url('${image}')`
+    "
   >
     <div class="card-content">
       <h2 class="card-title_name">
-        Kanye West
+        {{ name }}
       </h2>
       <div class="card-subinfo">
         <div class="card-subinfo_time">1 month ago</div>
-        <div class="subinfo_label">in Entertaiment</div>
+        <div class="subinfo_label">in {{ label }}</div>
       </div>
       <div class="card-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sequi?
+        {{ description }}
       </div>
       <div class="card-options">
         <div class="button-options">
@@ -30,16 +32,18 @@
     </div>
 
     <div class="card-results">
-      <div class="result_up">
-        <fa icon="thumbs-up" size="2x" /> <span>64%</span>
+      <div class="result_up" :style="`width:${percentUp}%!important`">
+        <fa icon="thumbs-up" size="2x" /> <span>{{ percentUp }}%</span>
       </div>
-      <div class="result_down">
-        <fa icon="thumbs-down" size="2x" /> <span>36%</span>
+      <div class="result_down" :style="`width:${percentDown}%!important`">
+        <fa icon="thumbs-down" size="2x" /> <span> {{ percentDown }}%</span>
       </div>
     </div>
 
-    <div class="card-current-status">
-      <button class="btn btn-green"><fa icon="thumbs-up" /></button>
+    <div class="card-current-status" v-if="currentStatus">
+      <button :class="`btn btn-${currentStatus.color}`">
+        <fa :icon="`thumbs-${currentStatus.status}`" />
+      </button>
     </div>
   </article>
 </template>
@@ -47,6 +51,48 @@
 <script>
 export default {
   name: "Card",
+  props: {
+    name: {
+      type: String,
+    },
+    date: {
+      type: String,
+    },
+    label: {
+      type: String,
+    },
+    description: {
+      type: String,
+    },
+    total_up: {
+      type: Number,
+      default: 0,
+    },
+    total_down: {
+      type: Number,
+      default: 0,
+    },
+    image: {
+      type: String,
+    },
+  },
+  computed: {
+    total() {
+      return this.total_up + this.total_down;
+    },
+    percentUp() {
+      return Math.round((100 / this.total) * this.total_up);
+    },
+    percentDown() {
+      return Math.round((100 / this.total) * this.total_down);
+    },
+    currentStatus() {
+      if (this.total_down == this.total_up) return;
+      return this.total_up > this.total_down
+        ? { color: "green", status: "up" }
+        : { color: "orange", status: "down" };
+    },
+  },
 };
 </script>
 
@@ -100,7 +146,7 @@ export default {
     display: flex;
 
     .result_up {
-      width: 64%;
+      width: 50%;
       height: 100%;
       background: rgba(28, 187, 180, 0.6);
       display: flex;
@@ -109,7 +155,7 @@ export default {
       padding-left: 10px;
     }
     .result_down {
-      width: 36%;
+      width: 50%;
       height: 100%;
       background: rgba(255, 173, 29, 0.6);
       display: flex;

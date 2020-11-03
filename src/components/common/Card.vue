@@ -152,6 +152,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  background-position: 50%;
 
   &-content {
     position: absolute;

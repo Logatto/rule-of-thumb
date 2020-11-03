@@ -5,6 +5,7 @@ import router from "./router";
 import store from "./store";
 import "normalize.css";
 import "./filters";
+import titleMixin from "./mixins/titleMixin";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -21,6 +22,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(faThumbsUp, faThumbsDown, faSearch, faFacebookSquare, faTwitter);
 
 Vue.component("fa", FontAwesomeIcon);
+Vue.mixin(titleMixin);
 
 Vue.config.productionTip = false;
 

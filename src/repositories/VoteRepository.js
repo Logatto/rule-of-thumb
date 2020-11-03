@@ -1,16 +1,12 @@
 import Client from "./Clients/FetchClient";
 
+const baseApi = process.env.VUE_APP_BASEAPI;
+
 export default {
   getAll() {
-    return Client(
-      "https://5skfmpwqsc.execute-api.us-west-1.amazonaws.com/rule-of-thumb/list"
-    );
+    return Client(`${baseApi}/list`);
   },
   postVote(payload) {
-    return Client(
-      "https://5skfmpwqsc.execute-api.us-west-1.amazonaws.com/rule-of-thumb/vote",
-      payload,
-      "POST"
-    );
+    return Client(`${baseApi}/vote`, payload, "POST");
   },
 };

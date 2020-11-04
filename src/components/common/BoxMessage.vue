@@ -56,4 +56,39 @@ export default {
     letter-spacing: 0;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .box-message {
+    .title {
+      width: 30%;
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .box-message {
+    // display: inline-block;
+    .title {
+      width: 40%;
+    }
+    .description {
+      width: 60%;
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .box-message {
+    display: inline-block;
+    height: auto;
+    padding: 1rem;
+    .title {
+      width: auto;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+    .description {
+      width: auto;
+    }
+  }
+}
 </style>

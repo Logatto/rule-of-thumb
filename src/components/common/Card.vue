@@ -223,4 +223,20 @@ export default {
     bottom: 205px;
   }
 }
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .card {
+    &-current-status {
+      bottom: 220px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card {
+    &-current-status {
+      bottom: 240px;
+    }
+  }
+}
 </style>

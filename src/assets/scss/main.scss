@@ -62,3 +62,149 @@ button {
     outline: 0;
   }
 }
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  /* CSS */
+  header {
+    .box {
+      margin: 70px 15% 0 15% !important;
+    }
+  }
+  nav {
+    padding: 0 15% 0 15% !important;
+  }
+  main {
+    margin: 2rem 15% 0 15% !important;
+  }
+  footer {
+    margin: 0 15% !important;
+  }
+}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  /* CSS */
+  header {
+    .box {
+      margin: 70px 15% 0 15% !important;
+    }
+  }
+  nav {
+    padding: 0 15% 0 15% !important;
+  }
+  main {
+    margin: 2rem 15% 0 15% !important;
+  }
+  footer {
+    margin: 0 15% !important;
+  }
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CSS */
+  header {
+    .background-image {
+      background-position: 50% !important;
+    }
+    .box {
+      margin: 70px 5% 0 5% !important;
+    }
+  }
+  nav {
+    padding: 0 5% 0 5% !important;
+  }
+  main {
+    margin: 2rem 5% 0 5% !important;
+  }
+  footer {
+    margin: 0 5% !important;
+  }
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  header {
+    .background-image {
+      background-position: 50% !important;
+    }
+    .box {
+      margin: 70px 5% 0 5% !important;
+    }
+  }
+  nav {
+    padding: 0 5% 0 5% !important;
+  }
+  main {
+    margin: 2rem 5% 0 5% !important;
+  }
+  footer {
+    margin: 0 5% !important;
+  }
+
+  .people-cards {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: 425px !important;
+  }
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* CSS */
+
+  nav {
+    padding: 0 !important;
+  }
+  main {
+    margin: 2rem 5% 0 5% !important;
+  }
+  footer {
+    margin: 0 5% !important;
+  }
+
+  .background-image {
+    background-position: 80% !important;
+  }
+  .box {
+    background: rgba(60, 60, 60, 0.1) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    margin-top: 0px !important;
+    backdrop-filter: none !important;
+  }
+
+  .people-cards {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: 425px !important;
+  }
+}

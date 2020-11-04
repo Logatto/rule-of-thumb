@@ -12,6 +12,7 @@ import {
   faThumbsUp,
   faThumbsDown,
   faSearch,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookSquare,
@@ -19,7 +20,14 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faThumbsUp, faThumbsDown, faSearch, faFacebookSquare, faTwitter);
+library.add(
+  faThumbsUp,
+  faThumbsDown,
+  faSearch,
+  faBars,
+  faFacebookSquare,
+  faTwitter
+);
 
 Vue.component("fa", FontAwesomeIcon);
 Vue.mixin(titleMixin);

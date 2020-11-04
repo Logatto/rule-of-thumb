@@ -7,13 +7,16 @@
       ></div>
     </div>
 
-    <nav>
+    <nav class="topnav" id="navbar">
       <div class="logo">
         <div class="name-logo">
           <router-link to="/"> Rule of Thumb.</router-link>
         </div>
       </div>
       <ul class="menus">
+        <li class="icon-bars" @click="toogleMenu">
+          <fa icon="bars" size="2x"></fa>
+        </li>
         <li><router-link to="/past-trials">Past Trials</router-link></li>
         <li class=""><router-link to="/it-works"> it Works</router-link></li>
         <li><router-link to="/login"> Log in/Sign Up</router-link></li>
@@ -61,6 +64,16 @@
 <script>
 export default {
   name: "Header",
+  methods: {
+    toogleMenu() {
+      var x = document.getElementById("navbar");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    },
+  },
 };
 </script>
 
@@ -221,6 +234,41 @@ section.box {
     padding-left: 20px;
     font-size: 2rem;
     font-weight: 400;
+  }
+}
+
+.icon-bars {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .menus {
+    li {
+      display: none;
+    }
+    .icon-bars {
+      display: block;
+      &:hover {
+        border-bottom: none;
+      }
+    }
+  }
+
+  nav.responsive {
+    ul.menus {
+      display: inline-block;
+      position: absolute;
+      top: 10px;
+      right: 0px;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 5;
+    }
+    li {
+      float: none;
+      display: block;
+      text-align: center;
+    }
   }
 }
 </style>

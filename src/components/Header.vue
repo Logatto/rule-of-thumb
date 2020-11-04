@@ -113,6 +113,7 @@ nav {
     justify-content: center;
     font-weight: 400;
     font-size: 2rem;
+    padding-left: 15px;
   }
   ul.menus {
     display: flex;

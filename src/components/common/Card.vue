@@ -198,6 +198,11 @@ export default {
     width: 100%;
     display: flex;
 
+    span {
+      font-size: 1.8rem;
+      margin-left: 5px;
+    }
+
     .result_up {
       width: 50%;
       height: 100%;

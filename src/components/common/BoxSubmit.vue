@@ -31,7 +31,7 @@ export default {
       rgba(255, 255, 255, 0.8)
     ),
     url("~@/assets/submit-image.png");
-  background-repeat: no-repeat;
+  background-repeat: inherit;
   display: flex;
   align-items: center;
   padding: 0 1rem;

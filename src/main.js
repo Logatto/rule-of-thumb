@@ -17,6 +17,7 @@ import {
 import {
   faFacebookSquare,
   faTwitter,
+  faWikipediaW,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -26,7 +27,8 @@ library.add(
   faSearch,
   faBars,
   faFacebookSquare,
-  faTwitter
+  faTwitter,
+  faWikipediaW
 );
 
 Vue.component("fa", FontAwesomeIcon);

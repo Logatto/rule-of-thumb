@@ -20,6 +20,7 @@
         <li><router-link to="/past-trials">Past Trials</router-link></li>
         <li class=""><router-link to="/it-works"> it Works</router-link></li>
         <li><router-link to="/login"> Log in/Sign Up</router-link></li>
+        <li><fa icon="search" size="lg"></fa></li>
       </ul>
     </nav>
     <section class="box">
@@ -34,7 +35,9 @@
           aut ratione consectetur repellendus magni, doloremque distinctio nemo
           corrupti molestias?
         </p>
-        <p class="more">More information</p>
+        <p class="more">
+          <fa :icon="['fab', 'wikipedia-w']"></fa> More information
+        </p>
         <div class="final-q">
           What's Your Veredict?
         </div>
